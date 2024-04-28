@@ -1,7 +1,9 @@
 Weather Forecast App
 ==========================
 
-A simple weather forecast application that displays the weather forecast for a given location.
+A simple weather forecast application that displays the weather forecast for a given location. The app was made as a take-home task for a job application. The task was to figure out how the API of [yr.no](yr.no) works, and then use it toretrieve the forecast for the next 10 days around 14:00 in Moscow. Alternatively, the user should be able to specify the coordinates of a location.
+
+![screenshot](https://github.com/ali-salloum6/forecast-api/blob/main/screenshot.png?raw=true)
 
 Getting Started
 ---------------
@@ -59,9 +61,10 @@ Optinoally, you can add `lat` and `lon` parameteres for latitude and longtitude.
 Development
 ------------
 
-* script.js: The main application script
-* utils.js: Utility functions for data processing
-* index.html: The HTML template for the application
+* `app.js`: The express server file
+* `script.js`: The main frontend script
+* `utils.js`: Utility functions for data processing
+* `index.html`: The HTML template for the application
 
 License
 -------
