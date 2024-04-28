@@ -32,7 +32,7 @@ app.get("/forecast", async (req, res) => {
     res.status(200).json(reducedTemperatures);
   } catch (error) {
     console.error(error);
-    res.status(500).json({ message: "Error fetching temperature forecast" });
+    res.status(400).json({ message: "Error fetching temperature forecast" });
   }
 });
 
