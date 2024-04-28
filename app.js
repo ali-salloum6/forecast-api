@@ -4,11 +4,7 @@ const utils = require("./utils");
 const app = express();
 const port = 3000;
 
-app.get("/", (req, res) => {
-  res.send("Hello World!");
-});
-
-app.get("/forecast", async (req, res) => {
+app.get("/api/forecast", async (req, res) => {
   try {
     const { lat, lon } = req.query;
     let response;
@@ -36,6 +32,7 @@ app.get("/forecast", async (req, res) => {
   }
 });
 
+app.use(express.static('frontend'));
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
 });
