@@ -32,7 +32,7 @@ app.get("/api/forecast", async (req, res) => {
   }
 });
 
-app.use(express.static('frontend'));
+app.use(express.static("frontend"));
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`);
+  console.log(`Forecast app listening on port ${port}`);
 });
