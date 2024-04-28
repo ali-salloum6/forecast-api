@@ -10,9 +10,17 @@ app.get("/", (req, res) => {
 
 app.get("/forecast", async (req, res) => {
   try {
-    const response = await axios.get(
-      "https://www.yr.no/api/v0/locations/2-524901/forecast",
-    );
+    const { lat, lon } = req.query;
+    let response;
+    if (!lat || !lon) {
+      response = await axios.get(
+        "https://www.yr.no/api/v0/locations/2-524901/forecast",
+      );
+    } else {
+      response = await axios.get(
+        `https://www.yr.no/api/v0/locations/${lat}%2C${lon}/forecast`,
+      );
+    }
     const data = response.data;
     const intervals = [...data.shortIntervals, ...data.longIntervals];
 
