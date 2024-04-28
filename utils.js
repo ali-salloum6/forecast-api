@@ -2,16 +2,16 @@
 function getTemperaturesAround14h(intervals) {
   // Filter intervals that overlap with 14:00 (2 PM)
   const temperatures = intervals
-    .filter((interval) => {
+    .filter(interval => {
       const startTime = new Date(interval.start);
       const endTime = new Date(interval.end);
       // Check if the interval overlaps with 14:00 (2 PM)
       return startTime.getHours() <= 14 && endTime.getHours() >= 14;
     })
-    .map((interval) => {
+    .map(interval => {
       return {
         datetime: interval.start,
-        temperature: interval.temperature.value,
+        temperature: interval.temperature.value
       };
     });
 
@@ -44,5 +44,5 @@ function reduceTemperaturesByDate(temperatures) {
 
 module.exports = {
   getTemperaturesAround14h,
-  reduceTemperaturesByDate,
+  reduceTemperaturesByDate
 };

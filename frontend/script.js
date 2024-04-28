@@ -4,7 +4,7 @@ const submitBtn = document.getElementById("submit-btn");
 const forecastContainer = document.getElementById("forecast-container");
 
 // Add an event listener to the form's submit event
-form.addEventListener("submit", async (e) => {
+form.addEventListener("submit", async e => {
   // Prevent the default form submission behavior
   e.preventDefault();
 
@@ -21,7 +21,7 @@ form.addEventListener("submit", async (e) => {
 
     // Create an HTML string to display the forecast data
     const forecastHTML = Object.keys(data)
-      .map((date) => {
+      .map(date => {
         // For each date in the data, create a paragraph element with the date and temperature
         const forecast = data[date];
         return `<p>${date}: ${forecast.temperature}°C</p>`;

@@ -10,11 +10,11 @@ app.get("/api/forecast", async (req, res) => {
     let response;
     if (!lat || !lon) {
       response = await axios.get(
-        "https://www.yr.no/api/v0/locations/2-524901/forecast",
+        "https://www.yr.no/api/v0/locations/2-524901/forecast"
       );
     } else {
       response = await axios.get(
-        `https://www.yr.no/api/v0/locations/${lat}%2C${lon}/forecast`,
+        `https://www.yr.no/api/v0/locations/${lat}%2C${lon}/forecast`
       );
     }
     const data = response.data;
